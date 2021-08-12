@@ -1,0 +1,16 @@
+tensorboard*
+exps*
+datasets/
+time_series/
+slurm/
+*.pyc
+*.amltmp
+
+# Files automatically created by Azure ML
+.amlignore
+.amlignore.amltmp
+.ipynb_checkpoints/
+__pycache__/
+data/.amlignore
+data/.amlignore.amltmp
+data/__pycache__/
