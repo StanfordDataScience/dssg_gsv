@@ -1,6 +1,5 @@
-# gsv-ml-buildings-new
+# Stanford Data Science for Social Good program 2021: Measuring spatial-temporal change of physical conditions in neighborhoods with street view imagery
 
-New GSV ML Buildings repo, for more experimentation and progress-tracking
 
 ## Setup
 
