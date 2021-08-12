@@ -1,4 +1,7 @@
-# Stanford Data Science for Social Good program 2021: Measuring spatial-temporal change of physical conditions in neighborhoods with street view imagery
+# Data Science for Social Good + Changing Cities Research Lab
+
+
+## Overview
 
 
 ## Setup
