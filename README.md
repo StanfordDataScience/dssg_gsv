@@ -4,7 +4,7 @@ Measuring spatial-temporal change of physical conditions in neighborhoods with s
 Team: Daniel Chen, Tingyan Deng, Evelyn Fitzgerald, Lijing Wang
 
 ## Overview
-
+This is the GitHub repository for Stanford DSSG2021 GSV/CCRL Project. Our goal is to use deep convolutional neural networks to identify building upkeep from Google Street View images of urban streetscapes at a large spatial-temporal scale: over 10 years (2007-2017), and across multiple cities (Boston, Detroit, etc.). We also quantitatively analyze relationship between predicted building upkeep conditions and well-being characteristics. 
 
 ## Setup
 
