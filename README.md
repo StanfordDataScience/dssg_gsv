@@ -1,8 +1,6 @@
-# Data Science for Social Good + Changing Cities Research Lab
+# gsv-ml-buildings-new
 
-
-## Overview
-
+New GSV ML Buildings repo, for more experimentation and progress-tracking
 
 ## Setup
 
@@ -28,13 +26,21 @@ Finally, create two new, empty directories: `exps` and `tensorboard`. The folder
 
 ## Quick Run
 
-Once you have everything set up, type in this command to train the best model on the Detroit data so far:
+Once you have everything set up, type in this command to train the best model so far:
+
+```sh
+python train.py --name transform_det_bos --label_type regr --l2 0 --gpu --epochs 50 --upsample --cities detroit boston --transform piecewise_linear detroit
+```
+
+You will find the experiment metadata in `exps/transform_det_bos`, model checkpoints in `exps/transform_det_bos/checkpoints`, and Tensorboard logs in `tensorboard/transform_det_bos`.
+
+To run the previous best model (built by Shubhang Desai), the following command can be used:
 
 ```sh
 python train.py --upsample --name det_best --label_type pa --l2 0 --gpu
 ```
 
-You will find the experiment metadata in `exps/detroit_best`, model checkpoints in `exps/detroit_best/checkpoints`, and Tensorboard logs in `tensorboard/detroit_best`.
+You will find the experiment metadata in `exps/det_best`, model checkpoints in `exps/det_best/checkpoints`, and Tensorboard logs in `tensorboard/det_best`.
 
 ## Training
 
@@ -78,7 +84,7 @@ Train a model using the `eval.py` script. The script will automatically load the
 - `num_preds`: The number of predictions to perform from the validation set.
 - `data_path`: Custom `datasets` directory location, if it is not underneath the project root. The value passed in replaces the project root, i.e. if the data is under /home/users/datasets, then '/home/users/' would be passed to this argument.
 - `city`: Which city (subdirectory of `datasets` besides `cityscapes`, `exps`, `tensorboard`, or `test`) to include in the training and validation sets for this run. This option overrides `add_bos` if included. Unlike the `cities` option for `train.py`, this takes only one city.
-- `time_series`: If set, the program will operate in time series mode. In time series mode, the program reads the dataset description from `time_series.csv` instead of `val.csv` and writes output to `pred.csv`.
+- `time_series`: If included, the program will operate in time series mode. In time series mode, the program reads the dataset description from `time_series.csv` instead of `val.csv` and writes output to `pred.csv`.
 
 ## Grad-CAMs
 
@@ -87,3 +93,11 @@ Use the `gradcam.py` script to generate and save Grad-CAMs from the classificati
 ```sh
 python gradcam.py --name example_exp
 ```
+
+## Map Visualization
+
+To visualize the prediction results on the map (by block group, or other geoid), use the `plot_map()` function in notebooks/visualize_timeseries.ipynb. 
+
+This function is designed to plot the timeseries predictions of a specific city, with a slider to view predictions across years. The function takes in a dataframe with geoid, predictions (or other output variable), a time variable (e.g. year), and the block shapes (from a .shp file) to plot on the map. 
+
+For more documentation, see the `notebooks/visualize_timeseries.ipynb` notebook.
