@@ -1,6 +1,9 @@
-# gsv-ml-buildings-new
+# Data Science for Social Good 2021 + Changing Cities Research Lab
+Measuring spatial-temporal change of physical conditions in neighborhoods with street view imagery
+Team: Daniel Chen, Tingyan Deng, Evelyn Fitzgerald, Lijing Wang
 
-New GSV ML Buildings repo, for more experimentation and progress-tracking
+## Overview
+
 
 ## Setup
 
