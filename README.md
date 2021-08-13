@@ -57,6 +57,7 @@ Train a model using the `train.py` script. There are a number of command line ar
 - `pretrain_path`: If this is not None, then the script will load a pretrained segmentation model from this path and fine-tune its encoder as the classifier for the buildings task.
 - `gpu`: Whether or not to use GPU
 - `data_path`: Custom `datasets` directory location, if it is not underneath the project root. The value passed in replaces the project root, i.e. if the data is under /home/users/datasets, then '/home/users/' would be passed to this argument.
+- `cities`: Which cities (subdirectories of `datasets` besides `cityscapes`, `exps`, `tensorboard`, or `test`) to include in the training and validation sets for this run. This option overrides `add_bos` if included.
 - `score_transform`: Applies a custom score transformation onto the regression labels to align across cities. Can be:
   - `piecewise_linear [base city name]`: Uses a piecewise linear transformation based on each city's class boundaries (for more details, see the 'Piecewise Linear Score Alignment Model Memo'). All cities' scores are aligned to the base city, i.e. `piecewise_linear detroit` would align all scores to the TrueSkill scores in Detroit.
 
@@ -75,6 +76,9 @@ Train a model using the `eval.py` script. The script will automatically load the
 
 - `name` **(required)**: Name of the experiment, used to create a subdirectory in `exps` and `tensorboard`.
 - `num_preds`: The number of predictions to perform from the validation set.
+- `data_path`: Custom `datasets` directory location, if it is not underneath the project root. The value passed in replaces the project root, i.e. if the data is under /home/users/datasets, then '/home/users/' would be passed to this argument.
+- `city`: Which city (subdirectory of `datasets` besides `cityscapes`, `exps`, `tensorboard`, or `test`) to include in the training and validation sets for this run. This option overrides `add_bos` if included. Unlike the `cities` option for `train.py`, this takes only one city.
+- `time_series`: If set, the program will operate in time series mode. In time series mode, the program reads the dataset description from `time_series.csv` instead of `val.csv` and writes output to `pred.csv`.
 
 ## Grad-CAMs
 
