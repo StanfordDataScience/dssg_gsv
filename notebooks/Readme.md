@@ -17,5 +17,4 @@
 
 ## Other visualization notebooks
 - `regression_results.ipynb`: Used to generate regression results from the experiment. Generates linear plot to demonstrate the relationship between the ground truth and the prediction.
-- `trueskills_boston.ipynb`: Used to read and print the boston prediction images with the trueskill score, class number and index.
-- `visualize_trueskills_detroit.ipynb`: Used to read and print the boston prediction images with the trueskill score, class number and index. Also including the visulization of the class distribution.
+- `visualize_trueskills_detroit&boston.ipynb`: Used to read and print the boston and detroit prediction images with the trueskill score, class number and index. Also including the visulization of the class distribution.
